@@ -1,0 +1,146 @@
+body {
+	margin: 60px auto;
+	width: 70%;
+	font-family: 'Helvetica', 'Arial', 'Sans-Serif';
+}
+
+a {
+	text-decoration: none;
+	color: #999;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+p, ul {
+	line-height: 1.4em;
+	color: #333;
+}
+
+p#venta {
+	font-size: 0.75em;
+	text-align: center;
+}
+
+div#google_translate_element {
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	width: 140px;
+	background: white;
+}
+div#rrss {
+	position: fixed;
+	z-index: 1;
+	bottom: 0;
+	right: 0;
+	height: 40px;
+	background: white;
+	border-radius: 15px;
+}
+div#rrss a:hover {
+	text-decoration: none;
+}
+div#rrss ul {
+	font-size: 1em;
+	padding: 0px;
+	list-style: none;
+	font-weight: bold;
+	margin: 10px;
+}
+div#rrss ul li {
+	display: inline;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+nav ul, footer ul, ul.proj {
+	font-size: 1em;
+	padding: 0px;
+	list-style: none;
+	font-weight: bold;
+}
+nav ul li, footer ul li, ul.proj li {
+	display: inline;
+	margin-right: 20px;
+}
+
+footer {
+	border-top: 1px solid #d5d5d5;
+	font-size: .8em;
+}
+
+body, pre, pre > code {
+	font-size: 16px;
+}
+
+/* CV */
+.cv {
+	margin: 0px 0px 60px;
+}
+.cv h1 {
+	font-size: 3em;
+}
+.cv h2 {
+	font-size: 2em;
+}
+.cv p {
+	font-size: 1.2em;
+}
+.cv .download {
+	float: right;
+	font-size: .8em;
+	text-transform: uppercase;
+}
+
+/* Galería */
+.galeria {
+	position: relative;
+	width: 100%;
+	padding-top: 66.7%;
+	/* background-color: #D3D3D3; */
+	/* border-radius: 15px; */
+}
+.imagen {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 1s, opacity 1s;
+}
+.actual {
+	visibility: visible;
+	opacity: 1;
+	transition: visibility 1s, opacity 1s;
+}
+.imagen img {
+	height: 100%;
+	position: relative;
+	left: 50%;
+	border-radius: 15px;
+	transform: translateX(-50%);
+}
+.texto {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	top: 89%;
+	color: white;
+	font-weight: bold;
+	font-size: 25px;
+}
+
+@media only screen and (max-width:481px) {
+	body {
+		width: 90%;
+	}
+	body, pre, pre > code {
+		font-size: 14px;
+	}
+}

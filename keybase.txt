@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/bercianor
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://bercianor.es
+  * I am bercianor (https://keybase.io/bercianor) on keybase.
+  * I have a public key ASAlwoFRsKBDk06MwtLFt03DnGF2Hp4VmrDZvXM9fu_xxAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012066ad253bac00c3bd5109eaf64432bf2bbbc1dcd1501752f373915f30a7f6b0130a",
+      "host": "keybase.io",
+      "kid": "012025c28151b0a043934e8cc2d2c5b74dc39c61761e9e159ab0d9bd733d7eeff1c40a",
+      "uid": "b547e92a02508417207f4ebeb812a319",
+      "username": "bercianor"
+    },
+    "merkle_root": {
+      "ctime": 1547421828,
+      "hash": "0a5511681084d1fff4ce2e05fc2f1cd3e3267a26c479fb62911dd55dc8b1fb6551e3edd1a0bff49158b46352243b7db6410cec38f7368164381b7ed96f9e8068",
+      "hash_meta": "106d524ad599b05171efd62c30ad83c18e2e68410bdd59ed68569fa049f0eda3",
+      "seqno": 4373130
+    },
+    "service": {
+      "entropy": "aBO+VrlGCYDhThQd5tuHeWKw",
+      "hostname": "bercianor.es",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "2.6.0"
+  },
+  "ctime": 1547421840,
+  "expire_in": 504576000,
+  "prev": "e383970f93692fdddbb41b9fee965ab5885289c4f9b13979321ca1a67decb9a2",
+  "seqno": 29,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgJcKBUbCgQ5NOjMLSxbdNw5xhdh6eFZqw2b1zPX7v8cQKp3BheWxvYWTESpcCHcQg44OXD5NpL93btBuf7pZatYhSicT5sTl5Mhyhpn3suaLEIMLFiFEVH9qESa8W0ZbojDTE17TYO87BH0MwAywL+tUyAgHCo3NpZ8RA3+L4kNbN3hFeuPx6ooziDOsg+7Yk6mTKehYCbc/X+HqbpyMV5RcrVH5J0EQ1xFrVSa+7nNTjItCzqeHGLr/OAqhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIIKP8u8SL+NjqD3ZfEZqxB7dgxGzhBNIHVYtslpGyGrHo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/bercianor
+
+==================================================================
