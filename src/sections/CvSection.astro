@@ -1,0 +1,12 @@
+---
+import { siteConfig } from '../config/site';
+import { getCvDocument } from '../cv/documents';
+import '../styles/cv.css';
+
+const { Content } = await getCvDocument(siteConfig.cv);
+---
+
+<section class="cv">
+  <a class="cv-download" href="/cv.pdf" download="cv_ruben_berciano.pdf">Descargar CV en PDF</a>
+  <Content />
+</section>

@@ -1,0 +1,38 @@
+{
+  "name": "bercianor-site",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.22"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^12",
+      "onFail": "warn"
+    }
+  },
+  "scripts": {
+    "dev": "pnpm run photos:sync && astro dev",
+    "photos:sync": "node --experimental-strip-types scripts/sync-photos.ts",
+    "check": "astro check && tsc --noEmit",
+    "typecheck": "pnpm run check",
+    "test": "node --experimental-strip-types --test tests/unit/*.test.ts",
+    "test:e2e": "playwright test",
+    "test:home": "node scripts/check-home.mjs",
+    "build": "pnpm run photos:sync && astro build",
+    "preview": "astro preview",
+    "verify:routes": "node scripts/check-routes.mjs"
+  },
+  "dependencies": {
+    "astro": "^7"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9",
+    "@marcus5914/google-photos-album-image-url-fetch": "^1.1",
+    "@playwright/test": "^1",
+    "@types/node": "^24",
+    "typescript": "^6"
+  }
+}

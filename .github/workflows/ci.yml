@@ -1,0 +1,50 @@
+name: Validate
+
+on:
+  pull_request:
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      upload_pages_artifact:
+        description: Upload the validated site for the deployment caller
+        type: boolean
+        required: false
+        default: false
+
+permissions:
+  contents: read
+
+# A called workflow sees the caller name; keep checks separate from Pages.
+concurrency:
+  group: checks-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    env:
+      CI: 'true'
+      ASTRO_TELEMETRY_DISABLED: '1'
+    steps:
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '>=22.22 <23'
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm run check
+      - run: pnpm test
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: sudo apt-get install --yes --no-install-recommends poppler-utils
+      - run: pnpm run build
+      - run: pnpm run verify:routes
+      - run: pnpm run test:home
+      - run: pnpm run test:e2e
+      - uses: actions/upload-pages-artifact@v3
+        if: ${{ inputs.upload_pages_artifact && github.event_name != 'pull_request' }}
+        with:
+          path: dist

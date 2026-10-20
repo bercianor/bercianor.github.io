@@ -1,0 +1,32 @@
+---
+import { getPhotoProvider, type PortfolioPhoto } from '../../services/photos/index';
+import '../../styles/photography.css';
+interface Props { photos?: readonly PortfolioPhoto[] }
+const photos = Astro.props.photos ?? await getPhotoProvider().getPhotos('portfolio');
+const initial = photos[0];
+---
+<div data-gallery>
+  {initial ? (
+    <div class="galeria">
+      <div class="imagen">
+        <img src={initial.fullUrl} alt="" fetchpriority="high" data-featured />
+      </div>
+    </div>
+  ) : <p>No hay fotografías disponibles.</p>}
+  <p class="gallery-status" role="status" aria-live="polite" data-gallery-status></p>
+  <slot />
+  <div class="flexbin" aria-label="Fotografías del portfolio">
+    {photos.map((photo, index) => (
+      <button type="button" data-photo-index={index} data-full-url={photo.fullUrl}
+        aria-label={`Mostrar fotografía ${index + 1} de ${photos.length}`}
+        aria-pressed={index === 0 ? 'true' : 'false'}>
+        <img src={photo.thumbnailUrl} alt="" loading="lazy" decoding="async"
+          width={photo.width ?? 300} height={photo.height ?? 200} />
+      </button>
+    ))}
+  </div>
+</div>
+<script>
+  import { initializeGalleries } from '../../scripts/gallery';
+  initializeGalleries();
+</script>

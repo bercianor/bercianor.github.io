@@ -1,0 +1,107 @@
+.galeria {
+  position: relative;
+  width: 100%;
+  padding-top: 66.7%;
+}
+
+.galeria .imagen {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+.galeria .imagen.is-fading {
+  opacity: 0;
+}
+
+.galeria img {
+  height: 100%;
+  position: relative;
+  left: 50%;
+  border-radius: 15px;
+  transform: translateX(-50%);
+}
+
+#venta {
+  font-size: 0.75em;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.gallery-status {
+  font-size: 0.75em;
+  text-align: center;
+}
+
+.gallery-status:empty {
+  display: none;
+}
+
+.flexbin {
+  --thumbnail-height: 300px;
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+  margin: -2.5px;
+}
+
+.flexbin::after {
+  content: '';
+  flex-grow: 999999999;
+  min-width: var(--thumbnail-height);
+  height: 0;
+}
+
+.flexbin > button {
+  position: relative;
+  display: block;
+  height: var(--thumbnail-height);
+  margin: 2.5px;
+  flex-grow: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.flexbin > button > img {
+  height: var(--thumbnail-height);
+  width: auto;
+  object-fit: cover;
+  max-width: 100%;
+  min-width: 100%;
+  vertical-align: bottom;
+}
+
+.flexbin > button:focus-visible {
+  outline: 3px solid #333;
+  outline-offset: -3px;
+}
+
+@media (max-width: 300px) {
+  .flexbin { --thumbnail-height: 75px; }
+}
+
+@media (min-width: 300px) and (max-width: 450px) {
+  .flexbin { --thumbnail-height: 112px; }
+}
+
+@media (min-width: 450px) and (max-width: 600px) {
+  .flexbin { --thumbnail-height: 150px; }
+}
+
+@media (min-width: 600px) and (max-width: 1050px) {
+  .flexbin { --thumbnail-height: 175px; }
+}
+
+@media (min-width: 1050px) {
+  .flexbin { --thumbnail-height: 180px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .galeria .imagen { transition: none; }
+}

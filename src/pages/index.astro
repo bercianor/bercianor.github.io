@@ -1,0 +1,8 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { homeSection } from '../config/sections';
+const Component = homeSection.component;
+---
+<BaseLayout title={homeSection.title} description={homeSection.description} canonicalPath="/">
+  <Component />
+</BaseLayout>

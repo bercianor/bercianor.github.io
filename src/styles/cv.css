@@ -1,0 +1,16 @@
+/* CV styles stay section-specific. */
+.cv { margin: 0 0 60px; }
+.cv h1 { font-size: 3em; }
+.cv h2 { font-size: 2em; }
+.cv h3 { font-size: 1.4em; }
+.cv p { font-size: 1.2em; }
+.cv-download {
+  color: #333;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  box-sizing: border-box;
+  padding: .6em 1em;
+  border: 1px solid #999;
+  border-radius: .25em;
+}

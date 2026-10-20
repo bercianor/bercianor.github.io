@@ -1,0 +1,44 @@
+body {
+  margin: 60px auto;
+  width: 70%;
+  font-family: 'Helvetica', 'Arial', 'Sans-Serif';
+  font-size: 16px;
+}
+a { text-decoration: none; color: #999; }
+a:hover { text-decoration: underline; }
+a:focus-visible { outline: 2px solid #555; outline-offset: 3px; }
+p, ul { line-height: 1.4em; color: #333; }
+#firma { max-width: 100%; height: auto; }
+#rrss {
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  right: 0;
+  max-width: 100%;
+  background: white;
+  border-radius: 15px;
+}
+#rrss a:hover { text-decoration: none; }
+#rrss ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 1em;
+  padding: 0;
+  list-style: none;
+  font-weight: bold;
+  margin: 10px 15px;
+}
+#rrss a { display: block; width: 20px; height: 20px; }
+#rrss img { display: block; width: 20px; height: 20px; object-fit: contain; font-size: 8px; }
+nav ul, footer ul {
+  font-size: 1em;
+  padding: 0;
+  list-style: none;
+  font-weight: bold;
+}
+nav ul li, footer ul li { display: inline; margin-right: 20px; }
+footer { border-top: 1px solid #d5d5d5; font-size: .8em; }
+@media only screen and (max-width:481px) {
+  body { width: 90%; font-size: 14px; }
+}

@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.astro/
+playwright-report/
+test-results/
+.DS_Store
+
+/odd/
+/src/data/photos.generated.json
+/src/data/photos.generated.json.*.tmp

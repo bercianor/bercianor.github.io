@@ -1,0 +1,41 @@
+---
+import '../styles/global.css';
+import SocialLinks from '../components/common/SocialLinks.astro';
+import { sectionMetadata, siteConfig } from '../config/site';
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  noindex?: boolean;
+}
+const { title, description, canonicalPath, noindex = false } = Astro.props;
+const navigationSections = sectionMetadata.filter(section => section.enabled).map(section => ({
+  ...section,
+  path: section.id === siteConfig.home ? '/' : section.path,
+}));
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={new URL(canonicalPath, siteConfig.url)} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+  </head>
+  <body>
+    <header>
+      <img src="/static/images/firma.png" id="firma" alt="bercianor" />
+      <nav aria-label="Secciones"><ul>
+        {navigationSections.map(section => (
+          <li><a href={section.path} aria-current={Astro.url.pathname === section.path ? 'page' : undefined}>{section.label}</a></li>
+        ))}
+      </ul></nav>
+    </header>
+    <main><slot /></main>
+    <footer><ul><li><a href="/politica_cookies/">Política de cookies</a></li></ul></footer>
+    <SocialLinks />
+  </body>
+</html>

@@ -1,0 +1,10 @@
+body { margin: 0; font: 10.5pt/1.4 Arial, sans-serif; color: #222; }
+h1 { margin: 0 0 10pt; font-size: 22pt; }
+h2 { margin: 16pt 0 6pt; font-size: 13pt; border-bottom: 1px solid #ddd; }
+h3 { margin: 12pt 0 4pt; font-size: 11pt; }
+h1, h2, h3 { break-after: avoid; }
+p, ul { margin: 0 0 7pt; }
+ul { padding-left: 16pt; }
+li { margin-bottom: 3pt; }
+p, li { orphans: 3; widows: 3; }
+a { color: inherit; text-decoration: none; }

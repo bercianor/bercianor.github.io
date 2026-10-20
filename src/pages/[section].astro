@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { sections } from '../config/sections';
+import { siteConfig } from '../config/site';
+export function getStaticPaths() {
+  return sections.filter(section => section.enabled).map(section => ({
+    params: { section: section.path.replace(/^\//, '').replace(/\/$/, '') },
+    props: { section },
+  }));
+}
+const { section } = Astro.props;
+if (section.id === siteConfig.home) return Astro.redirect('/', 301);
+const Component = section.component;
+---
+<BaseLayout title={section.title} description={section.description} canonicalPath={section.path}>
+  <Component />
+</BaseLayout>

@@ -1,0 +1,12 @@
+---
+import { socialLinks } from '../../data/social-links';
+---
+<div id="rrss" aria-label="Redes sociales">
+  <ul>
+    {socialLinks.map(link => (
+      <li><a href={link.href} target="_blank" rel={link.rel} aria-label={link.label} title={link.label}>
+        <img src={link.image} alt={link.alt} width="20" height="20" />
+      </a></li>
+    ))}
+  </ul>
+</div>
